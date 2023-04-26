@@ -1,0 +1,29 @@
+
+<div class="container my-5">
+    <h1 class="mb-3">Customers</h1>
+<table class="table" *ngIf="customers">
+    <thead>
+        <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Email</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cust of customers">
+            <td>{{ cust.customerId }}</td>
+            <td>{{ cust.name }}</td>
+            <td>{{ cust.age }}</td>
+            <td>{{ cust.gender }}</td>
+            <td>{{ cust.email }}</td>
+            <!-- <td><button (click)="editCustomer(cust)">Edit</button></td> -->
+        </tr>
+    </tbody>
+</table>
+<p *ngIf="!customers">No Customers Found</p>
+<br><br><button class="nav-link" routerLink="/adminhome">Back</button>
+</div>
+
+

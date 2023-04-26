@@ -1,0 +1,43 @@
+<div *ngIf="customer">
+  <body style="background-color:rgb(166, 255, 0)">
+    <form class="row g-3">
+      <div class="col-md-3">
+        <label for="inputname" class="form-label" >Name </label>
+        <input [(ngModel)]="customer.name" type="text" class="form-control" id="inputname" placeholder="Enter Name">
+      </div>
+      <div class="col-md-2">
+        <label for="inputage" class="form-label">Age </label>
+        <input [(ngModel)]="customer.age"  type="number" class="form-control" id="inputage" placeholder="Enter Age">
+      </div>
+      <div class="col-md-2">
+        <label for="inputGender" class="form-label">Gender</label>
+        <select [(ngModel)]="customer.gender" id="inputGender" class="form-select">
+          <option selected>Choose...</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="others">Other</option>
+        </select>
+      </div>
+      <div class="col-md-4">
+        <label for="inputEmail" class="form-label">Email </label>
+        <input [(ngModel)]="customer.email"  type="email" class="form-control" id="inputEmail" placeholder="Enter Email">
+      </div>
+      <div class="col-md-3">
+        <label for="inputPassword" class="form-label">Password </label>
+        <input [(ngModel)]="customer.password" type="password" class="form-control" id="inputPassword" placeholder="Enter Password">
+      </div>
+      <div class="col-12">
+        <button type="submit" class="submit" (click)="updateCustomer(customer)" *ngIf="customer.customerId">Save Changes</button> <br><br>
+      </div>
+      <div class="col-12">
+        <button type="submit" class="submit" (click)="deleteCustomer(customer)" *ngIf="customer.customerId">Delete</button> <br><br>
+      </div>
+      <div class="col-12">
+        <button type="submit" class="submit" (click)="createCustomer(customer)" *ngIf="customer.customerId">Create</button> <br><br>
+      </div>
+      <div class="col-12">
+        <button class="nav-link" routerLink="/viewdetails">Back</button><br><br><br><br><br><br><br><br><br><br>
+      </div>
+    </form>
+  </body>
+</div>

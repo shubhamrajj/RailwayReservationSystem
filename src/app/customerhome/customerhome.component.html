@@ -1,0 +1,29 @@
+<html>
+<head>
+<style>
+.button {
+  border: none;
+  color: rgb(255, 255, 255);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: red
+}
+
+
+</style>
+</head>
+<body style="text-align: center; background-color: rgb(255, 238, 80)">
+  <button class="btn btn-primary" (click)="logOut()">Log Out</button>
+<br><button class="nav-link" routerLink="/bookticket" (click)="bookTicket()">Book Ticket</button> <br><br>          
+<button class="nav-link" routerLink="/viewbookings" (click)="viewBookings()">View Bookings</button> <br><br>
+<button class="nav-link" routerLink="/customerhelp" (click)="help()">Help</button> <br><br>
+<button class="nav-link" routerLink="/viewdetails" (click)="viewDetails()">View Details</button> <br><br><br>`<br><br>
+<button class="nav-link" routerLink="/signin">Back</button> <br><br><br>`
+
+</body>
+</html>

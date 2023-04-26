@@ -1,0 +1,28 @@
+<body style="background-color:rgb(0, 255, 225)">
+    <form class="row g-3"> 
+        <div class="col-md-2"> 
+            <br><br><br><label for="inputcardnumber" class="form-label">Card Number</label> 
+            <input type="number" class="form-control" id="inputcardnumber" placeholder="Enter Card Number"> 
+          </div> 
+          <div class="col-md-3"> 
+            <br><br><br><label for="inputcardholdername" class="form-label">Card Holder Name</label> 
+            <input type="text" class="form-control" id="inputcardholdername" placeholder="Enter Card Holder Name"> 
+          </div> 
+          <div class="col-md-2"> 
+            <br><br><br><label for="inputcvv" class="form-label">CVV</label> 
+            <input type="number" class="form-control" id="inputcvv" placeholder="Enter CVV"> 
+          </div>
+         
+        <div class="col-md-2"> 
+            <br><br><br><label for="inputexpirydate" class="form-label">Expiry Date</label> 
+            <input type="date" class="form-control" id="inputexpirydate" placeholder="Enter Expiry Date"> 
+          </div> 
+        
+        <div class="col-12"> 
+            <br><br><br><br><button type="submit" class="button" (click)="pay()">Pay</button> <br><br>
+        </div>
+        <div class="col-12">
+        <button class="nav-link" routerLink="/searchtrains">Back</button><br><br><br><br><br><br><br> 
+    </div>
+        </form>
+    </body>

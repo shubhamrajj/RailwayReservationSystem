@@ -1,0 +1,43 @@
+<section class="vh-100">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-6 text-black">
+
+        <div class="px-5 ms-xl-4">
+          <i class="fas fa-crow fa-2x me-3 pt-5 mt-xl-4" style="color: #709085;"></i>
+        </div>
+        <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
+          <form class="border p-5 rounded-3" [formGroup]="loginForm" (ngSubmit)="loginSubmitted()">
+            <div class="col-md-8">
+              <br><br><br><label for="inputUsername" name="username" class="form-label">Username</label>
+              <input class="form-control" id="inputUsername " placeholder="Login ID" formControlName="Username">
+              <div class="form-text text-danger" *ngIf="Username.errors?.['Required'] && (Username.dirty|| Username.touched)">
+                Username is Required!
+              </div>
+            </div>
+            <div class="col-md-8">
+              <br><br><br><label for="inputPassword" name="password" class="form-label">Password </label>
+              <input type="password" class="form-control" id="inputPassword" placeholder="Password" formControlName="Password">
+              <div class="form-text text-danger" *ngIf="Password.errors?.['Required'] && (Password.dirty|| Password.touched)">
+                Password is Required!
+              </div>
+              <div class="form-text text-danger"
+                *ngIf="Password.errors?.['minlength'] || Password.errors?.['maxlength'] && (Password.dirty|| Password.touched)">
+                Password should be at least 6 and at the max 15 characters long.
+              </div>
+            </div>
+            <div class="col-12">
+              <br><br><br><button type="submit" class="button button-primary">Log In</button>
+              <br><br><br><br><br><br>
+            </div>
+            <span>Don't have an account?</span> <a href="#!" class="link-info" routerLink="/signup"> Signup here</a>
+          </form>
+        </div>
+      </div>
+      <div class="col-sm-6 px-0 d-none d-sm-block">
+        <img src="https://wallpapercrafter.com/desktop/98594-winter-train-train-station-5-Centimeters-Per-Second.jpg"
+          alt="Login image" class="w-100 vh-100" style="object-fit: cover; object-position: center;">
+      </div>
+    </div>
+  </div>
+</section>

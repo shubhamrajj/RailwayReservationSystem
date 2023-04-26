@@ -1,0 +1,117 @@
+<!-- Section: Design Block -->
+<section class="background-radial-gradient overflow-hidden">
+  <style>
+    .background-radial-gradient {
+      background-color: hsl(218, 41%, 15%);
+      background-image: url('https://images.wallpaperscraft.com/image/single/train_railroad_autumn_189240_1920x1080.jpg'),
+        radial-gradient(1250px circle at 100% 100%,
+          hsl(218, 41%, 45%) 15%,
+          hsl(218, 41%, 30%) 35%,
+          hsl(218, 41%, 20%) 75%,
+          hsl(218, 41%, 19%) 80%,
+          transparent 100%);
+    }
+
+    .bg-glass {
+      background-color: hsla(0, 0%, 100%, 0.9) !important;
+      backdrop-filter: saturate(200%) blur(25px);
+    }
+  </style>
+
+  <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+    <div class="row gx-lg-5 align-items-center mb-5">
+
+      <div class="col-lg-6 mb-5 mb-lg-0 position-relative ">
+        <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+        <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div> -->
+
+        <div class="card bg-glass">
+          <div class="card-body px-4 py-5 px-md-5">
+            <p class="text-center fs-3" [ngClass]="isAccountCreated ? 'text-success pb-1' : 'text-danger pb-1'">{{displayMsg}}</p>
+            <form [formGroup]="registerForm" (ngSubmit)="registerSubmitted()">
+              <span class="fs-3 text-cente">Register</span>
+              <!-- 2 column grid layout with text inputs for the first and last names -->
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <label class="form-label" for="Name">Name</label>
+                    <input type="text" id="Name" class="form-control" formControlName="name">
+                    <div class="form-text text-danger"
+                      *ngIf="Name.errors?.['required'] && (Name.touched || Name.dirty)">
+                      Name is Required.
+                    </div>
+                    <div class="form-text text-danger" *ngIf="Name.errors?.['minlength']">
+                      Name is Too Short.
+                    </div>
+                    <div class="form-text text-danger" *ngIf="Name.errors?.['pattern']">
+                      Name should be start with alphabet.
+                    </div>
+                  </div>
+                  <div class="col-md-4 mb-4">
+                    <div class="form-outline">
+                      <label class="form-label" for="age">Age</label>
+                      <input type="number" id="age" class="form-control" formControlName="age">
+                      <div class="form-text text-danger" *ngIf="Age.errors?.['required'] && (Age.touched || Age.dirty)">
+                        Age is Required.
+                      </div>
+                      <div class="form-text text-danger" *ngIf="Age.errors?.['minlength']">
+                        Age cannot be less than 0.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-4">
+                    <label for="gender" class="form-label">Gender</label>
+                    <select id="gender" class="form-select" formControlName="gender">
+                      <!-- <option selected>Choose an option</option> -->
+                      <option value="male">Male</option>
+                      <option value="female">Female</option>
+                      <option value="other">Other</option>
+                    </select>
+                    <div class="form-text text-danger"
+                      *ngIf="Gender.errors?.['required'] && (Gender.touched || Gender.dirty)">
+                      Gender is Required.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="email">Email address</label>
+                  <input type="email" id="email" class="form-control" formControlName="email">
+                  <div class="form-text text-danger"
+                    *ngIf="Email.errors?.['required'] && (Email.touched || Email.dirty)">
+                    Email is Required.
+                  </div>
+                  <div class="form-text text-danger" *ngIf="Email.errors?.['email']">
+                    Email is Invalid.
+                  </div>
+                </div>
+
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="password">Password</label>
+                  <input type="password" id="password" class="form-control" formControlName="password">
+                  <div class="form-text text-danger"
+                    *ngIf="Password.errors?.['required'] && (Password.touched || Password.dirty)">
+                    Password is Required.
+                  </div>
+                  <div class="form-text text-danger"
+                    *ngIf="Password.errors?.['minLength'] || Password.errors?.['maxLength'] && (Password.touched || Password.dirty)">
+                    Password should be at least 6 and at the max 15 character long.
+                  </div>
+                </div>
+
+                <!-- Submit button -->
+                <button type="submit"  class="btn btn-success btn-block mb-4">
+                  Sign up
+                </button>
+                <span>Already have an account?</span> <a href="#!" class="link-info" routerLink="/signin">login here</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Section: Design Block -->
